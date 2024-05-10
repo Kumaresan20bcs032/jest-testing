@@ -11,7 +11,7 @@ describe('Restful broker api tests', () => {
                 expect(res.body).toEqual(
                     {
                         "status_code": 200,
-                        "status": true,                                                                                                                                                                                                                                                                                         
+                        "status": true,
                         "message": "broker details",
                         "data": [
                             {
