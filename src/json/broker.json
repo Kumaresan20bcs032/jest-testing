@@ -1,0 +1,8 @@
+[
+    {
+        "name":"john",
+        "email":"john@gmail.com",
+        "amount":500,
+        "deposit":true
+    }
+]
