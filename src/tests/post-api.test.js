@@ -11,6 +11,8 @@ describe('Restful broker api test', () => {
                 "deposit": true
             })
             .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
             .expect(201)
             .end((err, res) => {
                 const actual = {

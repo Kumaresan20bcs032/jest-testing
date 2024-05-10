@@ -24,9 +24,9 @@ describe('Restful broker api tests', () => {
                     }
                 )
                 if (error) {
-                    throw new Error("error occured")
+                    return done(error)
                 }
-                done()
+                return done()
             })
 
     })

@@ -1,0 +1,40 @@
+import supertest from 'supertest';
+import app from '../server'
+
+describe('Restful broker api tests', () => {
+    test('updated broker details', (done) => {
+        supertest(app).put('/test')
+            .send({
+                "id": 2,
+                "name": "joi",
+                "email": "joi@gmail.com",
+                "amount": 700,
+                "deposit": true
+            })
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(201)
+            .end((err, res) => {
+                const response = {
+                    "status_code": 201,
+                    "status": true,
+                    "message": "Data updated successfully",
+                    "data": [
+                        {
+                            "id": 2,
+                            "name": "joi",
+                            "email": "joi@gmail.com",
+                            "amount": 700,
+                            "deposit": true
+                        }
+                    ]
+                }
+                expect(res.body).toEqual(response)
+                if (err) {
+                    return done(err)
+                }
+                return done()
+            })
+    })
+})
