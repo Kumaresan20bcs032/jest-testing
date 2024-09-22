@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll --coverage --verbose --silent --runInBand",
     "build": "babel src -d lib",
     "serve": "nodemon --exec babel-node src/index.js",
     "start": "npm run build && nodemon lib/index.js"
   },
+  "jest": {
+    "testEnvironment": "node"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,10 +22,13 @@
     "@babel/preset-env": "^7.24.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongodb-memory-server": "^9.2.0",
+    "mongoose": "^8.4.0",
     "nodemon": "^3.1.0",
     "supertest": "^7.0.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
   }
+  
 }
